@@ -1,0 +1,19 @@
+jaffle_shop:
+  outputs:
+    dev:
+      type: databricks
+      catalog: "{{ env_var('CATALOG') }}"
+      schema: "{{ env_var('SCHEMA') }}"
+      host:  "{{ env_var('HOST') }}"
+      http_path: "{{ env_var('HTTP_PATH') }}"
+      token:  "{{ env_var('TOKEN') }}"
+      threads: 4
+    production:
+      type: databricks
+      catalog: "{{ env_var('CATALOG') }}"
+      schema:  "default_production"
+      host: "{{ env_var('HOST') }}"
+      http_path: "{{ env_var('HTTP_PATH') }}"
+      token:  "{{ env_var('TOKEN') }}"
+      threads: 4
+  target: dev
