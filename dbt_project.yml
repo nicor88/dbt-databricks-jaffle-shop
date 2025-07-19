@@ -14,8 +14,29 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
+vars:
+  seeds_schema: 'jaffle_shop_bronze'
+  "dbt_date:time_zone": "America/Los_Angeles"
+
+seeds:
+  +schema: jaffle_shop_bronze
+  +docs:
+    node_color: "#cd7f32"
 
 models:
   jaffle_shop:
     example:
       +materialized: table
+    staging:
+      +materialized: view
+      +docs:
+        node_color: "#c0c0c0"
+    marts:
+      +materialized: table
+      +docs:
+        node_color: "#ffd700"
+
+
+
+flags:
+  use_materialization_v2: true
