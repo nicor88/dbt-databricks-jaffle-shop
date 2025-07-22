@@ -1,0 +1,9 @@
+[project]
+name = "dbt-databricks-jaffle-shop"
+version = "0.1.0"
+description = "A sample project showcasing how to use dbt with Databricks, featuring the Jaffle Shop data model."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dbt-databricks==1.10.4",
+]
