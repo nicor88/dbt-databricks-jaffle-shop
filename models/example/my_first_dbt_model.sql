@@ -12,7 +12,6 @@ with source_data as (
     select 2 as id, '2025-01-02'::date as created_date
     union all
     select 3 as id, '2025-01-03'::date as created_date
-
 )
 
 select *

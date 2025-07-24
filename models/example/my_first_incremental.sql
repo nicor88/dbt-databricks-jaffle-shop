@@ -5,7 +5,6 @@
         on_schema_change='append_new_columns',
         incremental_strategy='merge'
     )
-
 }}
 
 with source_data as (
@@ -17,6 +16,7 @@ with source_data as (
 
 )
 
-select *,
+select
+    *,
     current_timestamp as inserted_at
 from source_data
